@@ -24,7 +24,7 @@ export default function Dashboard() {
     document.cookie = 'next-auth.callback-url=; path=/; expires=Thu, 01 Jan 1970 00:00:00 UTC;';
     document.cookie = 'next-auth.csrf-token=; path=/; expires=Thu, 01 Jan 1970 00:00:00 UTC;';
 
-    await signOut({ callbackUrl: '/register/connect', redirect: true });
+    await signOut({ callbackUrl: '/register/connect-calendar', redirect: true });
   };
 
   return status === 'authenticated' ? (
