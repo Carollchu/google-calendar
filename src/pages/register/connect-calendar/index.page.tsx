@@ -4,7 +4,7 @@ import { Container, Header } from '../styles'
 import { ConnectBox, ConnectItem } from './styles'
 import { signIn } from 'next-auth/react'
 
-import previewImage from '../../../assets/microsoft_logo.svg'
+import previewImage from '../../../assets/microsoft_logo.png'
 import Image from 'next/image'
  
  export default function Register() {
