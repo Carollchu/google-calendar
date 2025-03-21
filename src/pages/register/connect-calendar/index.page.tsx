@@ -29,7 +29,7 @@ import { signIn } from 'next-auth/react'
              onClick={() => {
               signIn(
                 'azure-ad',
-                { callbackUrl: '/dashboard' },
+                { callbackUrl: '/register/dashboard' },
                 { prompt: 'login' },
               );
             }}
