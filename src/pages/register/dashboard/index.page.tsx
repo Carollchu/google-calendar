@@ -7,13 +7,12 @@ import { signOut, useSession } from 'next-auth/react';
 import previewImage from '../../../assets/microsoft_logo.svg';
 import Image from 'next/image';
 import { useRouter } from 'next/router';
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 
 export default function Dashboard() {
   const { data, status } = useSession();
   const router = useRouter();
-  const [isLoading, setIsLoading] = useState(false);
-
+  
   useEffect(() => {
     if (status === 'unauthenticated') {
       router.push('/');
@@ -27,10 +26,6 @@ export default function Dashboard() {
 
     await signOut({ callbackUrl: '/register/connect', redirect: true });
   };
-
-  if (status === 'loading') {
-    return <p>Loading...</p>; // Show loading state when session is loading
-  }
 
   return status === 'authenticated' ? (
     <Container>
